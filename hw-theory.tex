@@ -1,0 +1,111 @@
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{stmaryrd}
+\usepackage{cmll}
+\usepackage{mathrsfs}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+\usepackage{proof}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{mathabx}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage[normalem]{ulem}
+
+\makeatletter
+\newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
+
+\newcommand{\@dotminus}{%
+  \ooalign{\hidewidth\raise1ex\hbox{.}\hidewidth\cr$\m@th-$\cr}%
+}
+\makeatother
+
+\usetikzlibrary{arrows,backgrounds,patterns,matrix,shapes,fit,calc,shadows,plotmarks}
+
+\newtheorem{definition}{Определение}
+\newtheorem{theorem}{Теорема}
+\begin{document}
+
+\begin{center}{\Large\textsc{\textbf{Теоретические домашние задания}}}\\
+             \it Математическая логика, ИТМО, М3232-М3239, осень 2024 года\end{center}
+
+\section*{Задание №1. Знакомство с классическим исчислением высказываний.}
+
+При решении заданий вам может потребоваться теорема о дедукции (будет доказана на второй лекции): 
+\begin{theorem}
+$\gamma_1,\dots,\gamma_n, \alpha \vdash \beta$ 
+тогда и только тогда, когда $\gamma_1,\dots,\gamma_n \vdash \alpha\rightarrow\beta$. 
+\end{theorem}
+
+Пример использования: пусть необходимо доказать $\vdash A \rightarrow A$ --- то есть
+доказать существование вывода формулы $A \rightarrow A$ (заметьте, так поставленное
+условие не требует этот вывод предъявлять, только доказать его существование).
+Тогда заметим, что последовательность из одной формулы $A$ доказывает $A \vdash A$. 
+Далее, по теореме о дедукции, отсюда следует и $\vdash A \rightarrow A$ 
+(то есть, существование вывода формулы $A \rightarrow A$, не использующего гипотезы).
+
+Теорема будет доказана конструктивно: будет предъявлен алгоритм,
+перестраивающий вывод $\gamma_1,\dots,\gamma_n, \alpha \vdash \beta$ 
+в вывод $\gamma_1,\dots,\gamma_n \vdash \alpha\rightarrow\beta$ 
+
+\begin{enumerate}
+\item Докажите:
+\begin{enumerate}
+\item $\vdash (A \rightarrow A \rightarrow B) \rightarrow (A \rightarrow B)$
+\item $\vdash \neg (A \with \neg A)$
+\item $\vdash A \with B \rightarrow B \with A$
+\item $\vdash A \vee B \rightarrow B \vee A$
+\item $A \with \neg A \vdash B$
+\end{enumerate}
+
+\item Докажите:
+\begin{enumerate}
+\item $\vdash A \rightarrow \neg \neg A$
+\item $\neg A, B \vdash \neg(A\& B)$
+\item $\neg A,\neg B \vdash \neg( A\vee B)$
+\item $ A,\neg B \vdash \neg( A\rightarrow B)$
+\item $\neg A, B \vdash  A\rightarrow B$
+\end{enumerate}
+
+\item Докажите:
+\begin{enumerate}
+\item $\vdash (A \rightarrow B) \rightarrow (B \rightarrow C) \rightarrow (A \rightarrow C)$ 
+\item $\vdash (A \rightarrow B) \rightarrow (\neg B \rightarrow \neg A)$ \emph{(правило контрапозиции)}
+\item $\vdash \neg (\neg A \with \neg B) \rightarrow (A \vee B)$ \emph{(вариант I закона де Моргана)}
+\item $\vdash A \vee B \vdash \neg(\neg A \with \neg B)$
+\item $\vdash (\neg A \vee \neg B) \rightarrow \neg (A \with B)$ \emph{(II закон де Моргана)}
+\item $\vdash (A \rightarrow B) \rightarrow (\neg A \vee B)$
+\item $\vdash A \with B \rightarrow A \vee B$
+\item $\vdash ((A \rightarrow B) \rightarrow A)\rightarrow A$ \emph{(закон Пирса)}
+\item $\vdash A \vee \neg A$
+\item $\vdash (A \with B \rightarrow C) \rightarrow (A \rightarrow B \rightarrow C)$
+\item $\vdash A \with (B \vee C) \vdash (A \with B) \vee (A \with C)$ \emph{(дистрибутивность)}
+\item $\vdash (A \rightarrow B \rightarrow C) \rightarrow (A \with B \rightarrow C)$
+\item $\vdash (A \rightarrow B) \vee (B \rightarrow A)$
+\item $\vdash (A \rightarrow B) \vee (B \rightarrow C) \vee (C \rightarrow A)$
+\end{enumerate}
+
+\item Даны высказывания $\alpha$ и $\beta$, причём $\vdash \alpha\rightarrow\beta$ и $\not\vdash\beta\rightarrow\alpha$. 
+Укажите способ построения высказывания $\gamma$, такого, что
+$\vdash\alpha\rightarrow\gamma$ и $\vdash\gamma\rightarrow\beta$, причём $\not\vdash\gamma\rightarrow\alpha$ и
+$\not\vdash\beta\rightarrow\gamma$.
+
+\item Покажите, что если $\alpha \vdash \beta$ и $\neg\alpha\vdash\beta$, то $\vdash\beta$.
+
+\item Покажите, что классическое исчисление высказываний допускает правило Modus Tollens:
+$$\infer{\neg\varphi}{\varphi\rightarrow\psi\quad\quad\neg\psi}$$
+
+А именно, пусть дан некоторый вывод, в котором каждая формула --- либо аксиома, либо получена по правилу Modus Ponenes, либо имеет вид $\delta_n \equiv \neg\varphi$, причём
+ранее в доказательстве встречается $\delta_i \equiv \neg\psi$ и $\delta_j \equiv \varphi\rightarrow\psi$ (при этом $\max(i,j) < n$). Тогда такой вывод можно перестроить в
+корректное доказательство в классическом исчислении высказываний.
+
+В данном задании от вас требуется аккуратное изложение доказательства, видимо, использующее математическую индукцию. То есть, чётко
+сформулированное индукционное предположение и полные доказательства базы и перехода.
+\end{enumerate}
+
+\end{document}
