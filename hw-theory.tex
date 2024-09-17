@@ -85,14 +85,14 @@ $\gamma_1,\dots,\gamma_n, \alpha \vdash \beta$
 \item $\vdash (A \rightarrow B) \rightarrow (B \rightarrow C) \rightarrow (A \rightarrow C)$ 
 \item $\vdash (A \rightarrow B) \rightarrow (\neg B \rightarrow \neg A)$ \emph{(правило контрапозиции)}
 \item $\vdash \neg (\neg A \with \neg B) \rightarrow (A \vee B)$ \emph{(вариант I закона де Моргана)}
-\item $\vdash A \vee B \vdash \neg(\neg A \with \neg B)$
+\item $\vdash A \vee B \rightarrow \neg(\neg A \with \neg B)$
 \item $\vdash (\neg A \vee \neg B) \rightarrow \neg (A \with B)$ \emph{(II закон де Моргана)}
 \item $\vdash (A \rightarrow B) \rightarrow (\neg A \vee B)$
 \item $\vdash A \with B \rightarrow A \vee B$
 \item $\vdash ((A \rightarrow B) \rightarrow A)\rightarrow A$ \emph{(закон Пирса)}
 \item $\vdash A \vee \neg A$
 \item $\vdash (A \with B \rightarrow C) \rightarrow (A \rightarrow B \rightarrow C)$
-\item $\vdash A \with (B \vee C) \vdash (A \with B) \vee (A \with C)$ \emph{(дистрибутивность)}
+\item $\vdash A \with (B \vee C) \rightarrow (A \with B) \vee (A \with C)$ \emph{(дистрибутивность)}
 \item $\vdash (A \rightarrow B \rightarrow C) \rightarrow (A \with B \rightarrow C)$
 \item $\vdash (A \rightarrow B) \vee (B \rightarrow A)$
 \item $\vdash (A \rightarrow B) \vee (B \rightarrow C) \vee (C \rightarrow A)$
@@ -108,7 +108,7 @@ $\not\vdash\beta\rightarrow\gamma$.
 \item Покажите, что классическое исчисление высказываний допускает правило Modus Tollens:
 $$\infer{\neg\varphi}{\varphi\rightarrow\psi\quad\quad\neg\psi}$$
 
-А именно, пусть дан некоторый вывод, в котором каждая формула --- либо аксиома, либо получена по правилу Modus Ponenes, либо имеет вид $\delta_n \equiv \neg\varphi$, причём
+А именно, пусть дан некоторый вывод, в котором каждая формула --- либо аксиома, либо получена по правилу Modus Ponens, либо имеет вид $\delta_n \equiv \neg\varphi$, причём
 ранее в доказательстве встречается $\delta_i \equiv \neg\psi$ и $\delta_j \equiv \varphi\rightarrow\psi$ (при этом $\max(i,j) < n$). Тогда такой вывод можно перестроить в
 корректное доказательство в классическом исчислении высказываний.
 
