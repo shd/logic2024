@@ -42,3 +42,16 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 http://logic.math.msu.ru/wp-content/uploads/plisko/intlog.pdf
 + Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
+
+## Лекция 3
+### Модели интуиционистского исчисления высказываний
++ Мотивационный пример: Изоморфизм Карри-Ховарда
++ Непрерывность, компактность
++ Решётки, алгебра Гейтинга и булева алгебра
++ Алгебра Линденбаума
+### Где почитать
++ О. Я. Виро, О. А. Иванов, Н. Ю. Нецветаев, В. М. Харламов. Элементарная топология. --- М.: Издательство МЦНМО, 2010
++ В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009
+http://logic.math.msu.ru/wp-content/uploads/plisko/intlog.pdf
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
+https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
