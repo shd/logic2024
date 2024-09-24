@@ -37,7 +37,7 @@ $$\vdash \texttt{fun x -> x+1} : \texttt{int}\rightarrow\texttt{int}$$
 \begin{frame}[fragile]{Алгебраический тип (тип-сумма)}
 \begin{defrus}Отмеченное (дизъюнктное) объединение: $A \uplus B := \{ \langle x, 0 \rangle\ |\ x \in A\} \cup \{ \langle y, 1\rangle\ |\ y \in B\}$\end{defrus}
 
-Значение типа $\alpha\vee\beta$ --- значение либо типа $\alpha$, либо типа $\beta$ и мы знаем, какого именно. \verb!std::variant! в C++.
+Значение типа $\alpha\vee\beta$ --- значение либо типа $\alpha$, либо типа $\beta$, и мы знаем, какого именно. \verb!std::variant! в C++.
 
 \begin{exmprus}$\alpha$\verb! option! --- это $\alpha\vee()$\end{exmprus}
 
