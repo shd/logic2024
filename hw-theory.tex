@@ -171,7 +171,7 @@ $(9_\bot)$ & $((\alpha\rightarrow\bot)\rightarrow\bot)\rightarrow\alpha$
 или антидискретную топологию (не должно быть в каком-то смысле вырожденным).
 
 \item Наибольшим (наименьшим) значением в каком-то множестве назовём такое, которое больше (меньше) всех других элементов множества. 
-Несложно заметить, что для отношения включения множеств далеко всегда такое можно определить: например, на $\mathbb{R}^2$ не существует наибольшего круга с радиусом 1,
+Несложно заметить, что для отношения включения множеств далеко не всегда такое можно определить: например, на $\mathbb{R}^2$ не существует наибольшего круга с радиусом 1,
 хотя такой круг существует на $\{ z\ |\ z \in \mathbb{R}^2, |z| \le 1\}$.
 
 \emph{Внутренностью} множества $A^\circ$ назовём наибольшее открытое множество, содержащееся в $A$. 
@@ -276,7 +276,7 @@ A identity (A x) { return x; }
 \item $A \rightarrow B \rightarrow A$
 \item $A \with B \rightarrow A \vee B$
 \item $(A \with (B \vee C)) \rightarrow ((A \with B) \vee (A \with C))$
-\item $(A \rightarrow C) \with (B \rightarrow C) \with A \vee B \rightarrow C$
+\item $(A \rightarrow C) \with (B \rightarrow C) \with (A \vee B) \rightarrow C$
 \item $(B \vee C \rightarrow A) \rightarrow (B \rightarrow A) \with (C \rightarrow A)$
 \item $(A \rightarrow B) \rightarrow (\neg B \rightarrow \neg A)$
 \item $((A \rightarrow B) \rightarrow C) \rightarrow (A \rightarrow (B \rightarrow C))$
@@ -314,7 +314,7 @@ A identity (A x) { return x; }
 
 \item Пусть $R \subseteq A\times A$ --- отношение эквивалентности (то есть транзитивное, рефлексивное и симметричное).
 Тогда фактор-множество $A/_R := \{ [ x ]_R\ |\ x \in A\}$ --- множество \emph{классов эквивалентности},
-где $[x]_R = \{ t\in R\ |\ tRx\}$.
+где $[x]_R = \{ t\in A\ |\ tRx\}$.
 
 Покажите, что каждый элемент множества $A$ принадлежит в точности одному классу эквивалентности. Два класса эквивалентности либо не пересекаются, либо совпадают.
 
