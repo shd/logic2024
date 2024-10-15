@@ -470,4 +470,57 @@ $(\exists x.\forall y.\phi) \rightarrow (\forall x.\exists y.\phi)$
 
 \end{enumerate}
 
+\section*{Задание №6. Теорема о полноте И.П.}
+\begin{enumerate}
+\item Докажите теорему Гливенко: в КИВ/ИИВ, если $\vdash_\text{к} \varphi$, то $\vdash_\text{и} \neg\neg\varphi$. А также покажите
+\emph{Следствие:} ИИВ противоречиво тогда и только тогда, когда противоречиво КИВ.
+\item Докажите, что теорема Гливенко не верна в интуиционистском исчислении предикатов. 
+
+\emph{Указание:} возможно, вам поможет следующая модель для ИИП. Докажите, что это модель ИИП, если вы пойдёте по этому пути.
+Пусть $\langle X, \Omega\rangle$ --- некоторое топологическое
+пространство и $V = \Omega$ (как и в исчислении высказываний),
+пропозициональные связки определим аналогично топологической интерпретации И.И.В., 
+оценки же кванторов сделать такими:
+$$\llbracket \forall x.\varphi \rrbracket = \left(\bigcap_{v \in D} \llbracket \varphi \rrbracket^{x := v}\right)^\circ,\quad
+  \llbracket \exists x.\varphi \rrbracket = \bigcup_{v \in D} \llbracket \varphi \rrbracket^{x := v}$$
+
+\item Для построения аналога теоремы Гливенко определим операцию $(\cdot)_\text{Ku}$:
+$$(\varphi\star\psi)_\text{Ku} = \varphi_\text{Ku} \star \psi_\text{Ku}, \quad 
+(\forall x.\varphi)_\text{Ku} = \forall x.\neg\neg\varphi_\text{Ku}, \quad
+(\exists x.\varphi)_\text{Ku} = \exists x.\varphi_\text{Ku}$$
+
+Тогда \emph{преобразованием Куроды} формулы $\varphi$ назовём $\neg\neg(\varphi_\text{Ku})$. 
+Покажите, что $\vdash_\text{к}\alpha$ тогда и только тогда, когда $\vdash_\text{и}\neg\neg(\alpha_\text{Ku})$.
+
+
+\item Пусть задано какое-то семейство термов без свободных переменных $T$ и одноместный предикатный символ $P$.
+Покажите, что семейство $\Gamma = \{ P(\theta)\ |\ \theta \in T \}$ непротиворечиво (семейство всех формул подобного вида).
+Скажем, пример с лекции непротиворечив: $\Gamma = \{ P(1), P(2), P(3), \dots \}$
+\item Пусть $M$ --- непротиворечивое множество формул и $\mathcal{M}$ --- построенная в соответствии с теоремой о 
+полноте исчисления предикатов оценка для $M$. Мы ожидаем, что $\mathcal{M}$ будет моделью для $M$, для чего было необходимо доказать
+несколько утверждений. Восполните некоторые пробелы в том доказательстве. А именно, если $\varphi$ --- 
+некоторая формула и для любой формулы $\zeta$, более короткой, чем $\varphi$, выполнено
+$\mathcal{M}\models\zeta$ тогда и только тогда, когда $\zeta\in M$, тогда покажите:
+\begin{enumerate}
+\item если $\varphi \equiv \alpha\vee\beta$, $\mathcal{M}\models\alpha\vee\beta$, то $\alpha\vee\beta\in M$; и если $\mathcal{M}\not\models\alpha\vee\beta$, то $\alpha\vee\beta\notin M$;
+\item если $\varphi \equiv \neg\alpha$, $\mathcal{M}\models\neg\alpha$, то $\neg\alpha\in M$; и если $\mathcal{M}\not\models\neg\alpha$, то $\neg\alpha\notin M$.
+\end{enumerate}
+\item Обозначим за $\sigma\leftrightarrow\zeta$ две импликации: $(\sigma\rightarrow\zeta)\with(\zeta\rightarrow\sigma)$.
+Докажите, что $(\exists x.\varphi) \leftrightarrow ((\exists y.\varphi)[x := y])$. Какие условия надо наложить на $\varphi$, чтобы доказательства имели место?
+Постройте контрпримеры к ситуациям, когда условия не выполнены.
+\item Попробуем наметить доказательство теоремы о переносе кванторов:
+\begin{enumerate}
+\item Например, внесём квантор внутрь для конъюнкции: $(\forall x.\alpha\with\beta) \rightarrow (\forall x.\alpha)\with(\forall x.\beta)$. Какие условия надо наложить на формулы $\alpha$ и $\beta$
+(при наложении условия предложите надлежащий контрпример)?
+\item И теперь вынесем квантор наружу --- например, для импликации: $(\forall x.\alpha)\rightarrow(\forall y.\beta)$. Как правильно вынести левый квантор, 
+$\forall x.\forall y.\alpha\rightarrow\beta$ или $\exists x.\forall y.\alpha\rightarrow\beta$? Постройте вывод для правильного варианта, постройте контрпример для неправильного.
+Какие условия надо наложить на формулы $\alpha$ и $\beta$
+(при наложении условия предложите надлежащий контрпример)?
+\item Научимся преобразовывать выражение по частям: например, если $\alpha\rightarrow\beta$, то $(\beta\rightarrow\gamma) \rightarrow (\alpha\rightarrow\gamma)$
+и $(\forall x.\alpha) \rightarrow (\forall x.\beta)$ (какие условия надо наложить на формулы $\alpha$ и $\beta$?).
+\item Докажите, что для любого выражения $\varphi$ найдётся эквивалентное ему выражение без поверхностных кваторов $\psi$. В доказательстве можно ссылаться на предыдущие пункты
+и на другие аналогичные утверждения (например, для других связок). В полном доказательстве $\vdash\varphi\rightarrow\psi$, известном автору, используется 38 подобных вспомогательных утверждений.
+\end{enumerate}
+\end{enumerate}
+
 \end{document}
