@@ -441,13 +441,13 @@ $\delta_1, \delta_2,\dots,\delta_n$. \pause Тогда $\vdash \delta_1\to\delta
 \begin{thm}Если $\Gamma$ --- некоторое семейство бескванторных формул, то $\Gamma$ имеет модель
 тогда и только тогда, когда любое его конечное подмножество имеет модель.\end{thm}
 \begin{proof}
-$(\Leftarrow)$: очевидно
+$(\Rightarrow)$: очевидно
 
-$(\Rightarrow)$: пусть каждое конечное подмножество имеет модель. Тогда $\Gamma$ непротиворечиво:
+$(\Leftarrow)$: пусть каждое конечное подмножество имеет модель. Тогда $\Gamma$ непротиворечиво:
 
-{\footnotesize Иначе, для любой $\sigma$ выполнено $\Gamma\vdash\sigma$. В частности, для $\gamma\in\Gamma$
-выполнено $\Gamma\vdash\neg\gamma$. Доказательство имеет конечную длину, и использует конечное
-количество формул $\gamma_1,\dots,\gamma_n\in\Gamma$. Тогда рассмотрим $\Sigma = \{\gamma,\gamma_1,\dots,\gamma_n\}$, 
+{\footnotesize Иначе для любой $\sigma$ выполнено $\Gamma\vdash\sigma$. В частности, для $\gamma\in\Gamma$
+выполнено $\Gamma\vdash\neg\gamma$. Доказательство имеет конечную длину и использует конечное
+количество формул $\gamma_1,\dots,\gamma_n\in\Gamma$. Тогда рассмотрим $\Sigma = \{\gamma,\gamma_1,\dots,\gamma_n\}$
 и модель $\mathcal{S}$ для неё. Тогда:
 \begin{enumerate}
 \item $\models_{S}\gamma$ (определение модели)
