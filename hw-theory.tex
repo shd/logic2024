@@ -16,6 +16,7 @@
 \usepackage{comment}
 \usepackage{hyperref}
 \usepackage[normalem]{ulem}
+\usepackage{cancel}
 
 \makeatletter
 \newcommand{\dotminus}{\mathbin{\text{\@dotminus}}}
@@ -502,8 +503,8 @@ $$(\varphi\star\psi)_\text{Ku} = \varphi_\text{Ku} \star \psi_\text{Ku}, \quad
 некоторая формула и для любой формулы $\zeta$, более короткой, чем $\varphi$, выполнено
 $\mathcal{M}\models\zeta$ тогда и только тогда, когда $\zeta\in M$, тогда покажите:
 \begin{enumerate}
-\item если $\varphi \equiv \alpha\vee\beta$, $\mathcal{M}\models\alpha\vee\beta$, то $\alpha\vee\beta\in M$; и если $\mathcal{M}\not\models\alpha\vee\beta$, то $\alpha\vee\beta\notin M$;
-\item если $\varphi \equiv \neg\alpha$, $\mathcal{M}\models\neg\alpha$, то $\neg\alpha\in M$; и если $\mathcal{M}\not\models\neg\alpha$, то $\neg\alpha\notin M$.
+\item если $\varphi \equiv \alpha\vee\beta$, $\mathcal{M}\models\alpha\vee\beta$, то $\alpha\vee\beta\in M$; и если $\mathcal{M}\cancel{\models}\alpha\vee\beta$, то $\alpha\vee\beta\notin M$;
+\item если $\varphi \equiv \neg\alpha$, $\mathcal{M}\models\neg\alpha$, то $\neg\alpha\in M$; и если $\mathcal{M}\cancel{\models}\neg\alpha$, то $\neg\alpha\notin M$.
 \end{enumerate}
 \item Обозначим за $\sigma\leftrightarrow\zeta$ две импликации: $(\sigma\rightarrow\zeta)\with(\zeta\rightarrow\sigma)$.
 Докажите, что $(\exists x.\varphi) \leftrightarrow ((\exists y.\varphi)[x := y])$. Какие условия надо наложить на $\varphi$, чтобы доказательства имели место?
