@@ -14,6 +14,7 @@
 \usepackage{proof}
 \usepackage{comment}
 \usepackage{multirow}
+\usepackage{diagbox}
 \setbeamertemplate{navigation symbols}{}
 %\usetheme{Warsaw}
 
@@ -268,14 +269,14 @@ $$A(m,n) = \left\{\begin{array}{ll}
 %\end{thm}\pause
 
 \begin{exm}
-\begin{tabular}{cccccccc}
-$n$ & $0$ & $1$ & $2$ & $3$ & $4$ & \dots \\\hline
-$0$ & $1$ & $2$ & $3$ & $5$ & $13$   \\
-$1$ & $2$ & $3$ & $5$ & $13$ & $65533$ \\
-$2$ & $3$ & $4$ & $7$ & $29$ & $2^{65536}-3$ \\
-$n$ & $n+1$ & $n+2$ & $2n+3$ & $2^{n+3}-3$ & $\underbrace{2^{2^{2^{\dots^2}}}}_{n+3}-3$
-\end{tabular}
-\end{exm}
+  \begin{tabular}{cccccccc}
+  \backslashbox{n}{m} & $0$ & $1$ & $2$ & $3$ & $4$ & \dots \\\hline
+  $0$ & $1$ & $2$ & $3$ & $5$ & $13$   \\
+  $1$ & $2$ & $3$ & $5$ & $13$ & $65533$ \\
+  $2$ & $3$ & $4$ & $7$ & $29$ & $2^{65536}-3$ \\
+  $t$ & $t+1$ & $t+2$ & $2t+3$ & $2^{t+3}-3$ & $\underbrace{2^{2^{2^{\dots^2}}}}_{t+3}-3$
+  \end{tabular}
+  \end{exm}
 \end{frame}
 
 \begin{frame}{Лемма о росте функции Аккермана}
