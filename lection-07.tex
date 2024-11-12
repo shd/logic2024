@@ -415,7 +415,7 @@ $a + b = b + a$
 $\alpha\rightarrow\beta\rightarrow\alpha$ (сх. акс. 1) & $\forall a.\forall b.a \rightarrow b \rightarrow a$ \vspace{0.1cm}\\
 \texttt{let rec map f l = match l with} & $map: \forall a.\forall b.(a \rightarrow b) \rightarrow a\texttt{ list} \rightarrow b\texttt{ list}$ \\
 \texttt{| [] -> []} \\
-\texttt{| l1::ls -> f l1 :: map f l1}\vspace{0.1cm}\\
+\texttt{| l1::ls -> f l1 :: map f ls}\vspace{0.1cm}\\
 \texttt{map ((+) 1) [1;2;3] = [2;3;4]}
 \end{tabular}
 \end{exm}
