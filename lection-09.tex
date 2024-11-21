@@ -69,7 +69,7 @@ $$\psi(0) \with (\forall x.\psi(x) \rightarrow \psi(x')) \rightarrow \psi(x)$$
 
 Докажем индукцией по $x$.
 \begin{enumerate}
-\item $x := 0$. Тогда либо $\llbracket \theta_0(0) = \theta_1(0) \rrbracket = \text{Л}$, 
+\item $x := 0$. Тогда либо $\llbracket \theta_0(0) = \theta_1(0) \rrbracket^{x := 0} = \text{Л}$, 
 либо $\llbracket \theta_0(x) = \theta_1(x) \rrbracket^{x := 0} = \text{И}$
 \item $x := s$. Тогда $s$ раз применяем переход $$\llbracket \theta_0(x) = \theta_1(x) \rightarrow \theta_0(x') = \theta_1(x') \rrbracket^{x := \overline{0\dots s}} = \text{И}$$
 отсюда $$\llbracket\theta_0(x') = \theta_1(x') \rrbracket^{x := s} = \llbracket\theta_0(x) = \theta_1(x) \rrbracket^{x := s+1} = \text{И}$$
