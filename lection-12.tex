@@ -334,7 +334,7 @@ $$\infer[x \notin \Gamma]{\Gamma,x:\varphi \vdash x:\varphi}{} \quad\quad
 
 $$\infer[\lambda]{\vdash \lambda f.\lambda x.f\ (f\ x) : (\alpha\rightarrow\alpha)\rightarrow(\alpha\rightarrow\alpha)}{
   \infer[\lambda]{f: \alpha\rightarrow\alpha \vdash \lambda x.f\ (f\ x) : (\alpha\rightarrow\alpha)}{
-    \infer[App]{{\color{blue}\{ f:\alpha\rightarrow\alpha, x: \alpha\}\ }\Gamma \vdash f\ (f\ x): \alpha}{
+    \infer[App]{{\color{blue}\{ f:\alpha\rightarrow\alpha, x: \alpha\}\ } \vdash f\ (f\ x): \alpha}{
       \infer[App]{\Gamma \vdash f\ x: \alpha}{
         \infer[Ax]{\Gamma \vdash x: \alpha}{}\quad\quad\infer[Ax]{\Gamma \vdash f: \alpha\rightarrow\alpha}{}
       }\quad\quad
