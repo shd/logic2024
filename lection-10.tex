@@ -9,6 +9,7 @@
 \usepackage{amsthm}
 \usepackage{tikz}
 \usepackage{multicol}
+\usepackage{comment}
 \usetikzlibrary{patterns}
 \usepackage{chronosys}
 \usepackage{proof}
@@ -239,6 +240,7 @@ $P_H(t_1,\dots,t_n) = P_M(eval(t_1),\dots,eval(t_n))$. Очевидно, люб�
 $(\Leftarrow)$ Очевидно.
 \end{proof}\end{frame}
 
+\begin{comment}
 \begin{frame}{Противоречивость системы дизъюнктов}
 \begin{dfn}Система дизъюнктов $\{\delta_1,\dots,\delta_n\}$ противоречива,
 если для каждой интерпретации $M$ найдётся $\delta_k$ и такой набор $d_1\dots d_v$,
@@ -463,5 +465,6 @@ insertSort []     = []
 insertSort (x:xs) = insert x (insertSort xs) 
 \end{verbatim}
 \end{frame}
+\end{comment}
 
 \end{document}
