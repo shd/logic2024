@@ -1,0 +1,344 @@
+\documentclass[aspectratio=169]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+\usepackage{cmll}
+\usepackage{graphicx}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{multicol}
+\usetikzlibrary{patterns}
+\usepackage{chronosys}
+\usepackage{proof}
+\usepackage{multirow}
+\setbeamertemplate{navigation symbols}{}
+%\usetheme{Warsaw}
+
+\newtheorem{thm}{Теорема}[section]
+\newtheorem{dfn}{Определение}[section]
+\newtheorem{lmm}{Лемма}[section]
+\newtheorem{exm}{Пример}[section]
+\newtheorem{snote}{Пояснение}[section]
+
+\newcommand{\divisible}%
+{\mathrel{\lower.2ex%
+\vbox{\baselineskip=0.7ex\lineskiplimit=0pt%
+\kern6pt \hbox{.}\hbox{.}\hbox{.}}%
+}}
+
+\begin{document}
+
+\newcommand\doubleplus{+\kern-1.3ex+\kern0.8ex}
+\newcommand\mdoubleplus{\ensuremath{\mathbin{+\mkern-10mu+}}}
+
+\begin{frame}
+\begin{center}\LARGE Метод резолюции\end{center}
+\end{frame}
+
+\begin{frame}{Метод резолюции (что мы умеем, повторение)}
+Дана формула $\alpha$.
+\begin{enumerate}
+\item Упростим формулу --- поверхностные кванторы всеобщности, сколемизация.
+
+Умеем строить формулу $\beta$:
+
+$$\beta := \forall x_1.\forall x_2.\forall x_k.\delta_1(x_1,\dots,x_k)\with\dots\with\delta_n(x_1,\dots,x_k)$$
+
+$\alpha$ доказуема тогда и только тогда, когда при всех оценках
+предикатных и функциональных символов найдётся значение 
+сколемовских функций $e_k$, при которых $\beta$ всегда истинна (слоёный пирог из кванторов).
+
+\item Упрощаем предметное множество --- заменили произвольный $D$ на эрбранов универсум $H$. 
+Выполнимость формулы эквивалентна выполнимости на эрбрановом универсуме.
+
+\item Осталось избавиться от кванторов всеобщности и организовать правильный перебор
+(эрбранов универсум может быть бесконечным).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Оценка формулы на эрбрановом универсуме}
+\begin{dfn}
+Эрбранов универсум $H_\varphi$ --- всевозможные комбинации функциональных символов из формулы $\varphi$.
+Если в формуле нет нульместных функциональных символов, к множеству символов формулы добавляется 
+свежий нульместный функциональный символ $a$ и все комбинации с его участием.
+\end{dfn}
+
+Например, для $P(0)\vee (P(x)\rightarrow P(x'))$ эрбрановым универсумом будет $\{0, 0', 0'', 0''', \dots\}$,
+для $P(x')$ это будет $\{a,a',a'',a''',\dots\}$.
+
+\begin{dfn} Если $\varphi$ --- бескванторная формула, то её эрбранова оценка задаётся как
+$\langle H_\varphi, F, P, E\rangle$, функции $F$ определяются как текстовые подстановки
+$\llbracket f(\theta)\rrbracket = ``f(`` ++ \llbracket \theta \rrbracket ++ ``)``$, предикаты $P$ задаются перечислением
+истинных.
+\end{dfn}
+
+Например, для $P(0)\vee (P(x)\rightarrow P(x'))$ эрбранова оценка при истинных предикатах $\{P(0'), P(0''), P(0''''')\}$
+такова: $\llbracket \varphi \rrbracket^{ x:=0 } = \text{И}$ и $\llbracket \varphi \rrbracket^{ x:=0'' } = \text{Л}$
+\end{frame}
+
+\begin{frame}{Противоречивые системы дизъюнктов}
+\begin{thm}[о выполнимости]Формула выполнима тогда и только тогда, когда она выполнима в какой-то эрбрановой оценке.\end{thm}
+\begin{proof}Доказано на предыдущей лекции.\end{proof}
+
+\begin{dfn}Система дизъюнктов $S = \{\delta_1,\dots,\delta_n\}$ противоречива,
+если для каждой оценки $M = \langle D,P,F,E \rangle$ найдётся $\delta_t$ и такой набор $\overline{d} \in D$,
+что $\llbracket\delta_t\rrbracket^{\overline{x} := \overline{d}} = \text{Л}$.
+\end{dfn}
+
+\begin{thm}Система дизъюнктов противоречива, если она невыполнима в эрбрановых оценках.\end{thm}
+\end{frame}
+
+\begin{frame}{Основные примеры.}
+
+Рассмотрим сколемизированную формулу $\beta$ в КНФ. Заметим, что если $\beta = \forall x_1.\dots.\forall x_k.\delta_1\with\delta_2\with\dots\with\delta_n$,
+то $$\vdash \beta \leftrightarrow (\forall x_1.\dots.\forall x_k.\delta_1)\with\dots\with(\forall x_1.\dots.\forall x_k.\delta_n)$$
+
+\begin{dfn}
+Дизъюнкт с подставленными значениями из эрбранового универсума $H_\beta$ вместо переменных называется основным примером формулы $\beta$.
+\end{dfn}
+\begin{exm}Пусть $\beta := \forall x.P(0) \with (P(x)\vee P(x'))$, тогда $P(0''')\vee P(0'''')$ --- основной пример, а $P(0''''')$ --- нет.
+\end{exm}
+
+\begin{dfn}Система основных примеров --- все основные примеры, опровергаемые хоть при какой-то эрбрановой оценке $\mathcal{M}$:
+
+\vspace{-0.3cm}
+$$\mathcal{E}_S = \{ \delta_t[\overline{x} := \overline{d}]\ |\ \text{существует }\mathcal{M}\text{, что } \llbracket \delta_t[\overline{x} := \overline{d}] \rrbracket_\mathcal{M}=\text{Л};\quad d_i \in H_\beta\}$$
+\end{dfn}
+
+\end{frame}
+
+\begin{frame}{Противоречивые множества основных примеров}
+\begin{dfn}Система основных примеров $E$ противоречива в эрбрановой оценке (интерпретации), если 
+для любой эрбрановой оценки $M$ найдётся такой $\varepsilon\in E$, что $\llbracket \varepsilon \rrbracket_M = \text{Л}$.
+\end{dfn}
+
+%\end{dfn}\vspace{-0.5cm}
+\begin{thm}Система дизъюнктов $S$ противоречива тогда и только тогда, когда система её всевозможных
+основных примеров $\mathcal{E}_S$ противоречива в эрбрановой интерпретации.\end{thm}
+%\begin{proof}Для некоторой эрбрановой интерпретации дизъюнкт $\delta_k$
+%опровергается тогда и только тогда, когда соответствующая ему подстановка в $\mathcal{E}_S$ опровергается.
+%\end{proof}
+\end{frame}
+
+\begin{frame}{Теорема Эрбрана}
+\begin{thm}[Гёделя о компактности]Если $\Gamma$ --- некоторое семейство бескванторных формул, то $\Gamma$ имеет модель
+тогда и только тогда, когда любое его конечное подмножество имеет модель.\end{thm}
+
+\begin{thm}[Эрбрана]Система дизъюнктов $S$ противоречива тогда и только тогда, когда у
+$\mathcal{E}_S$ существует конечное противоречивое в эрбрановой интерпретации подмножество.\end{thm}
+\begin{proof}$(\Leftarrow)$ 
+Пусть $\{\varepsilon_1,\dots,\varepsilon_t\} \subseteq \mathcal{E}_S$ противоречиво, $\varepsilon_i = \delta_{m_i}[\overline{x} := \overline{d_i}]$,
+где $\overline{d_i}$ --- набор значений из $H$. 
+То есть, для любой эрбрановой оценки $M$ существует $\varepsilon_p$, что $\llbracket\varepsilon_p\rrbracket_M = \text{Л}$. 
+%Тогда $\llbracket \delta_{m_p} \rrbracket^{\overline{x}:=\overline{d_p}}_M = \text{Л}$.
+Отсюда, по теореме о выполнимости $S$ тоже противоречива.
+
+$(\Rightarrow)$ Если $S$ противоречива, то $\mathcal{E}_S$ противоречива. 
+Тогда у неё нет модели. Тогда у неё найдётся конечное противоречивое подмножество (компактность).
+\end{proof}
+
+Возможно убедиться в невыполнимости за конечное время.
+\end{frame}
+
+\begin{frame}{Общая схема алгоритма}
+Цель алгоритма: убедиться, что $\alpha$ доказуемо.
+\begin{enumerate}
+\item По формуле $\alpha$ строим её отрицание $\neg\alpha$.
+\item Приводим к виду с поверхностными кванторами, проводим сколемизацию, находим КНФ:
+$\beta = \forall x_1.\dots.\forall x_k.\delta_1\with\dots\with\delta_n$.
+\item Убедимся, что при любом $D$ и значениях функциональных и предикатных символов и сколемовских функций $e_k$ найдутся $d_i \in D$, 
+что один из дизъюнктов $\delta_t$ при подстановке $\overline{x} := \overline{d}$ ложный.
+\item Для этого строим универсум Эрбрана $H$, и систему основных примеров $\mathcal{E}_S$, её противоречивость эквивалентна невыполнимости $\beta$.
+\item Конечное противоречивое подмножество обязательно находится в каком-то начальном отрезке $\{\varepsilon_1,\dots,\varepsilon_t\} \subseteq \mathcal{E}_S$ 
+(если оно есть).
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Пример: как проверяем выполнимость формулы?}
+Допустим, формула: $(\forall x.P(x)\with P(x')) \with \exists x.\neg P(x'''')$
+
+\begin{enumerate}
+\item Поверхностные кванторы, сколемизация, КНФ: $(\forall x.P(x)) \with (\forall x.P(x')) \with (\neg P(e''''))$
+\item Строим эрбранов универсум: $H = \{e, e', e'', e''', \dots \}$
+\item Если есть противоречие, то среди основных примеров:
+$$\mathcal{E} = \{ P(e), P(e'), P(e''), P(e'''), P(e''''), \neg P(e''''), \dots \}$$
+\end{enumerate}
+
+Либо есть $\mathcal{M}$, что $\llbracket\bigwith \mathcal{E}\rrbracket_\mathcal{M} = \text{И}$, 
+либо есть $\{\varepsilon_1,\dots,\varepsilon_n\} \subseteq \mathcal{E}$, что $\llbracket\varepsilon_t\rrbracket_\mathcal{M} = \text{Л}$
+для какого-то $t$ при каждой эрбрановой оценке $\mathcal{M}$.
+\vspace{0.3cm}
+
+\begin{tabular}{lll}
+Подмножество $\mathcal{E}$& выполнено в оценке & количество оценок\\\hline
+$\{ P(e) \}$ & $\llbracket P(e) \rrbracket  = \text{И}$ & 2 варианта\\
+$\{ P(e), P(e') \}$ & $\llbracket P(e) \rrbracket = \llbracket P(e') \rrbracket  = \text{И}$ & 4 варианта\\
+\dots\\
+$\{ P(e), \dots, P(e''''), \neg P(e'''') \}$ & невыполнимо & 64 варианта
+\end{tabular}
+\end{frame}
+
+%Добавляем по примеру и проверяем.
+%$P(e)$ система выполнима при $\llbracket P(e) \rrbracket  = \text{И}$ (2 варианта)
+%$P(e')$ система выполнима при $\llbracket P(e') \rrbracket = \text{И}$ (4 варианта)
+%...
+%$P(e'''')$ система выполнима при $\llbracket P(e'''') \rrbracket = \text{И}$ (32 варианта)
+%$\neg P(e'''')$ система невыполнима (64 варианта).
+
+\begin{frame}{Правило резолюции (исчисление высказываний)}
+Пусть даны два дизъюнкта, $\alpha_1 \vee \beta$ и $\alpha_2 \vee \neg \beta$.
+Тогда следующее правило вывода называется правилом резолюции:
+
+$$\infer{\alpha_1\vee \alpha_2}{\alpha_1\vee \beta\quad\quad \alpha_2\vee\neg \beta}$$
+
+\begin{thm}Система дизъюнктов противоречива, если в процессе всевозможного применения
+правила резолюции будет построено явное противоречие,
+т.е. найдено два противоречивых дизъюнкта: $\beta$ и $\neg\beta$.
+\end{thm}
+\end{frame}
+
+\begin{frame}{Расширение правила резолюции на исчисление предикатов}
+Заметим, что правило резолюции для исчисления высказываний не подойдёт для исчисления предикатов.
+
+$$S = \{ P(x), \neg P(0)\}$$
+
+Здесь $P(x)$ противоречит $\neg P(0)$, но правило резолюции для исчисления высказываний здесь неприменимо, потому
+что $x$ можно заменять, это не константа:
+%$\beta \equiv P(x)$, тогда $\neg \beta \not\equiv \neg P(0)$.
+
+$$\infer{???}{P({\color{red}x})\quad\quad\neg P({\color{red}0})}$$
+
+Нужно заменять $P(x)$ на основные примеры, и искать среди них. Модифицируем правило резолюции для этого.
+
+\end{frame}
+
+
+\begin{frame}{Алгебраические термы}
+	\begin{dfn}Алгебраический терм $$\theta := x\:|\:(f(\theta_1,\ldots,\theta_n))$$ 
+где $x-$переменная, $f(\theta_1,\ldots,\theta_n)-$применение функции. Напомним, что константы --- нульместные
+функциональные символы, собственно переменные будем обозначать последними буквами латинского алфавита. \end{dfn}
+	%\subsection{Уравнение в алгебраических термах $\theta_1=\theta_2$\\Система уравнений в алгебраических термах}
+	\begin{dfn}Система уравнений в алгебраических термах
+	$
+		\begin{cases}
+			\theta_1=\sigma_1&\\
+			\vdots&\\
+			\theta_n=\sigma_n&\\
+		\end{cases}
+	$\par где $\theta_i \text{ и } \sigma_i-\text{термы}$\par
+\end{dfn}
+\end{frame}
+\begin{frame}{Уравнение в алгебраических термах}
+	\begin{dfn}$\{x_i\}=X-$множество переменных, $\{\theta_i\}=T-$множество термов.\end{dfn}
+	\begin{dfn}Подстановка$-$отображение вида: $\pi_0:X\to T$, тождественное почти везде (за исключением конечного числа переменных).
+        \par $\pi_0(x)$ может быть либо $\pi_0(x)=\theta_i\text{, либо }\pi_0(x)=x$.\end{dfn} 
+	Доопределим $\pi:T\to T$, где \begin{enumerate}
+		\item $\pi(x)=\pi_0(x)$
+		\item $\pi(f(\theta_1, \ldots, \theta_k))=f(\pi(\theta_1), \ldots, \pi(\theta_k))$
+	\end{enumerate}
+	
+	\begin{dfn}Решить уравнение в алгебраических термах$-$найти такую наиболее общую подстановку $\pi$, 
+        что $\pi(\theta_1)=\pi(\theta_2)$.
+Наиболее общая подстановка --- такая, для которой другие подстановки являются её частными случаями.\end{dfn} 
+\end{frame}
+
+\begin{frame}{Задача унификации}
+\begin{dfn}
+Пусть даны формулы $\alpha$ и $\beta$. Тогда решением задачи унификации
+будет такая наиболее общая подстановка $\pi = \mathcal{U}\big[\alpha,\beta\big]$, что $\pi(\alpha) = \pi(\beta)$.
+
+%Будем писать $\Sigma = \mathcal{U}\[\alpha,\beta\]$, если $\Sigma(\alpha) = \Sigma(\beta) = \eta$ и $\Sigma$ --- наиболее общая.
+Также, $\eta$ назовём наиболее общим унификатором.
+\end{dfn}
+
+\begin{exm}
+\begin{itemize}
+%\item $\mathcal{U}\[ P(x,g(b)),P(f(a),y) \] = [ x := f(a), y := f(b) ]$ 
+%и $P(f(a),g(b))$ --- унификатор.
+\item Формулы $P(a,g(b))$ и $P(c,d)$ не имеют унификатора (мы считаем, что $a,b,c,d$ --- нульместные функции, а
+$g$ --- одноместная функция).
+
+\item Проверим формулу на соответствие 11 схеме аксиом: $$(\forall x.P(x))\rightarrow P(f(t,g(t),y))$$
+Пусть $\pi = \mathcal{U}\big[P(x),P(f(t,g(t),y))\big]$, тогда $\pi(x) = f(t,g(t),y)$.
+\end{itemize}
+\end{exm}
+\end{frame}
+
+\begin{frame}{Правило резолюции для исчисления предикатов}
+\begin{dfn}
+Пусть $\sigma_1$ и $\sigma_2$ --- подстановки, заменяющие переменные в формуле на свежие. 
+Тогда правило резолюции выглядит так:
+
+$$\infer[{\pi = \mathcal{U}\big[\sigma_1(\beta_1),\sigma_2(\beta_2)\big]}]
+        {\pi(\sigma_1(\alpha_1)\vee \sigma_2(\alpha_2))}
+        {\alpha_1\vee \beta_1\quad\quad\alpha_2\vee\neg \beta_2}$$
+\end{dfn}
+
+$\sigma_1$ и $\sigma_2$ разделяют переменные у дизъюнктов, чтобы $\pi$ не осуществила лишние
+замены, ведь $\vdash(\forall x.P(x) \with Q(x)) \leftrightarrow (\forall x.P(x))\with(\forall x.Q(x))$, но
+$\not\vdash (\forall x.P(x) \vee Q(x)) \rightarrow (\forall x.P(x))\vee(\forall x.Q(x))$.
+
+\begin{exm}\vspace{-0.5cm}
+$$\infer[\text{ подстановки: } \sigma_1(x) = x', \sigma_2(x) = x'', \pi(x')=a]{Q(a)\vee T(x'')}{Q(x)\vee P(x) \quad \neg P(a)\vee T(x)}$$
+\end{exm}
+\end{frame}
+
+\begin{frame}{Метод резолюции}
+Ищем $\vdash\alpha$.
+
+\begin{enumerate}
+\item будем искать опровержение $\neg\alpha$.
+\item перестроим $\neg\alpha$ в КНФ.
+\item будем применять правило резолюции, пока получаем новые дизъюнкты и пока 
+не найдём явное противоречие (дизъюнкты вида $\beta$ и $\neg\beta$).
+\end{enumerate}
+
+Если противоречие нашлось, значит, $\vdash\neg\neg\alpha$. Если нет --- значит, $\vdash\neg\alpha$.
+Процесс может не закончиться.
+\end{frame}
+
+\begin{frame}{SMT-решатели}
+
+Обычно требуется не логическое исчисление само по себе, а теория первого порядка.
+То есть, <<Satisfability Modulo Theory>>, <<выполнимость в теории>> --- вместо SAT, выполнимости.
+\begin{itemize}
+\item Иногда можно вложить теорию в логическое исчисление, 
+даже в исчисление высказываний: $\overline{S_2S_1S_0} = \overline{A_1A_0}+\overline{B_1B_0}$
+$$\begin{array}{ll}
+S_0 = A_0 \oplus B_0 & C_0 = A_0 \with B_0\\
+S_1 = A_1 \oplus B_1 \oplus C_0 & C_1 = (A_1 \with B_1) \vee (A_1 \with C_0) \vee (B_1 \with C_0) \\
+S_2 = C_1\end{array}$$
+
+\item А можно что-то добавить прямо на уровень унификации / резолюции:
+Например, можем зафиксировать арифметические функции --- и производить вычисления
+в правиле резолюции вместе с унификацией.
+
+Тогда противоречие в $\{x = 1+3+1,\neg x = 5\}$ можно найти за один шаг.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Уточнённые типы (Refinement types), LiquidHaskell}
+\begin{dfn}(Неформальное) Уточнённый тип --- тип вида $\{\tau(x)\ |\ P(x)\}$, где $P$ --- некоторый предикат.\end{dfn}
+
+Пример на LiquidHaskell:
+\begin{verbatim}
+data [a] <p :: a -> a -> Prop> where
+   | []  :: [a] <p>
+   | (:) :: h:a -> [a<p h>]<p> -> [a]<p>
+\end{verbatim}
+\begin{itemize}
+\item \verb!h:a! --- голова ($h$) имеет тип $a$\\
+\item \verb![a<p h>]<p>! --- хвост состоит из значений типа $a$, уточнённых $p$ --- $\{ t : a\ |\ p\ h\ t\}$ (карринг: \verb!a <p h>!).
+\end{itemize}
+
+\begin{verbatim}
+{-@ type IncrList a = [a] <{\xi xj -> xi <= xj}> @-}
+{-@ insertSort    :: (Ord a) => xs:[a] -> (IncrList a) @-}
+insertSort []     = []
+insertSort (x:xs) = insert x (insertSort xs) 
+\end{verbatim}
+\end{frame}
+
+\end{document}
