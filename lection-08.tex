@@ -517,9 +517,9 @@ $$a_i = b \% (1 + c\cdot(i+1)) = \beta(b,c,i)$$
 \begin{tabular}{lll}
 Шаг вычисления & Об. & Утверждение в Ф.А.\\
 $R\langle f,g\rangle (x_1,\dots,x_n,0) = f(x_1,\dots,x_n)$ & $a_0$ & $\vdash \varphi(\overline{x_1},\dots,\overline{x_n},\overline{a_0})$\\ \pause
-$R\langle f,g\rangle (x_1,\dots,x_n,1) = g(x_1,\dots,x_n,0,a_0)$ & $a_1$ & $\vdash \gamma(\overline{x_1},\dots,\overline{x_n},0,\overline{a_1})$\\ \pause
+$R\langle f,g\rangle (x_1,\dots,x_n,1) = g(x_1,\dots,x_n,0,a_0)$ & $a_1$ & $\vdash \gamma(\overline{x_1},\dots,\overline{x_n},0,\overline{a_0},\overline{a_1})$\\ \pause
 $\dots$\\
-$R\langle f,g\rangle (x_1,\dots,x_n,y) = g(x_1,\dots,x_n,y-1,a_{y-1})$ & $a_y$ & $\vdash \gamma(\overline{x_1},\dots,\overline{x_n},\overline{y-1},\overline{a_y})$
+$R\langle f,g\rangle (x_1,\dots,x_n,y) = g(x_1,\dots,x_n,y-1,a_{y-1})$ & $a_y$ & $\vdash \gamma(\overline{x_1},\dots,\overline{x_n},\overline{y-1},\overline{a_{y-1}},\overline{a_y})$
 \end{tabular}\pause\vspace{0.3cm}
 
 По свойству $\beta$-функции, найдутся $b$ и $c$, что
