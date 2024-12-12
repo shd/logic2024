@@ -832,8 +832,8 @@ $Y\ P =_\beta P\ (Y\ P)$ для любого терма $P$. С его помо�
 Тогда, вызванная как $Y\ P\ x$, эта функция вычислит $2^x$. Например, $Y\ P\ 1 =_\beta$
 
 \vspace{-0.3cm}
-$$\begin{array}{l}=_\beta P\ (Y\ P)\ 1 = (\lambda f.\lambda x.(IsZero\ x)\ 1\ ((Dec\ x)\cdot 2)))\ (Y\ P)\ 1 \\
-  =_\beta (IsZero\ 1)\ 1\ ((Y\ P\ (Dec\ 1)) \cdot 2))) =_\beta ((Y\ P\ 0) \cdot 2 \\
+$$\begin{array}{l}=_\beta P\ (Y\ P)\ 1 = (\lambda f.\lambda x.(IsZero\ x)\ 1\ ((f (Dec\ x))\cdot 2)))\ (Y\ P)\ 1 \\
+  =_\beta (IsZero\ 1)\ 1\ ((Y\ P\ (Dec\ 1)) \cdot 2))) =_\beta (Y\ P\ 0) \cdot 2 \\
   =_\beta (P\ (Y\ P)\ 0) \cdot 2 \\
   =_\beta (IsZero\ 0)\ 1\ ((Y\ P\ (Dec\ 0)) \cdot 2))) \cdot 2\\
   =_\beta 1 \cdot 2 =_\beta 2\end{array}$$
