@@ -192,7 +192,7 @@ https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 ### Где почитать
 + Френкель А.А., Бар-Хиллел И. Основания теории множеств. --- УРСС, 2010
 + П.Дж. Коэн, Теория множеств и континуум-гипотеза --- М.: Изд-во <<Мир>>, 1969.
-+ Chris Taylor, The Algebra of Algebraic Data Types,
++ Chris Taylor, The Algebra of Algebraic Data Types.
 https://www.youtube.com/watch?v=YScIPA8RbVE
 
 ## Лекция 15
