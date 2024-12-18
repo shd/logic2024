@@ -40,7 +40,7 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 + О. Я. Виро, О. А. Иванов, Н. Ю. Нецветаев, В. М. Харламов. Элементарная топология. --- М.: Издательство МЦНМО, 2010
 + В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009
 http://logic.math.msu.ru/wp-content/uploads/plisko/intlog.pdf
-+ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lectures on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 
 ## Лекция 3
@@ -53,7 +53,7 @@ https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 + О. Я. Виро, О. А. Иванов, Н. Ю. Нецветаев, В. М. Харламов. Элементарная топология. --- М.: Издательство МЦНМО, 2010
 + В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009
 http://logic.math.msu.ru/wp-content/uploads/plisko/intlog.pdf
-+ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lectures on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 
 ## Лекция 4
@@ -65,7 +65,7 @@ https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 ### Где почитать
 + В.Е.Плиско, В.Х.Хаханян, Интуиционистская логика, Мех-Мат МГУ 2009
 http://logic.math.msu.ru/wp-content/uploads/plisko/intlog.pdf
-+ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lectures on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 
 ## Лекция 5
@@ -192,7 +192,7 @@ https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 ### Где почитать
 + Френкель А.А., Бар-Хиллел И. Основания теории множеств. --- УРСС, 2010
 + П.Дж. Коэн, Теория множеств и континуум-гипотеза --- М.: Изд-во <<Мир>>, 1969.
-+ Chris Taylor, The Algebra of Algebraic Data Types,
++ Chris Taylor, The Algebra of Algebraic Data Types.
 https://www.youtube.com/watch?v=YScIPA8RbVE
 
 ## Лекция 15
