@@ -35,28 +35,28 @@
 \begin{document}
 
 \begin{frame}
-\begin{center}\LARGE Аксиома выбора \end{center}
+\begin{center}\LARGE Аксиома выбора\end{center}
 \end{frame}
 
 \begin{frame}{Аксиома выбора}
 \begin{axm}[выбора]
-Из любого семейства дизъюнктных непустых множеств $\{A_i\}$ можно выбрать непустую трансверсаль --- 
-множество $S$, что $S \cap A_i = \{ x_i \}$. Иначе, $S \in \times \{A_i\}$.
+Из любого семейства дизъюнктных непустых множеств $\mathcal{A}$ можно выбрать непустую трансверсаль --- 
+множество $S$, что $|S \cap A| = 1$ для каждого $A\in\mathcal{A}$. Иначе, $S \in \times \mathcal{A}$.
 \end{axm}
 
 \begin{thm}[функциональный вариант аксиомы выбора]
-Пусть $\{A_\alpha\}$ --- семейство непустых множеств. Тогда существует
-$f : \{A_\alpha\} \rightarrow \cup A_\alpha$, причём $\forall a.a \in \{A_\alpha\} \rightarrow f(a) \in a$
+Пусть $\mathcal{A}$ --- семейство непустых множеств. Тогда существует
+$f : \mathcal{A} \rightarrow \cup \mathcal{A}$, причём $\forall a.a \in \mathcal{A} \rightarrow f(a) \in a$
 \end{thm}
 
 \begin{proof}
-Пусть $X(A_\alpha) = \{ \langle A_\alpha, a \rangle \ |\ a \in A_\alpha \}$, 
-по семейству $\{A_\alpha\}$ рассмотрим $\{X(A_\alpha)\}$
+Пусть $X(A) = \{ \langle A, a \rangle \ |\ a \in A \}$, 
+по семейству $\mathcal{A}$ рассмотрим $\{X(A)\ |\ A\in\mathcal{A}\}$
 \begin{itemize}
-\item непустых: если $A_\alpha \ne \varnothing$, то $X(A_\alpha) \ne \varnothing$;
-\item дизъюнктное: если $A_\alpha \ne A_\beta$, то $X(A_\alpha) \cap X(A_\beta) = \varnothing$
+\item непустых: если $A\in\mathcal{A}$, $A \ne \varnothing$, то $X(A) \ne \varnothing$;
+\item дизъюнктное: если $A_0,A_1\in\mathcal{A}$, $A_0 \ne A_1$, то $X(A_0) \cap X(A_1) = \varnothing$
 \end{itemize}
-тогда по аксиоме выбора $\exists f.f \in \times \{ X(A_\alpha) \}$.
+тогда по аксиоме выбора $\exists f.f \in \times \mathcal{A}$.
 \end{proof}
 Обратное утверждение также легко показать.
 \end{frame}
@@ -161,15 +161,15 @@ $a \in X\setminus R$. Тогда положив $M = \langle R\cup\{a\}, (\sqsub
 Рассмотрим сюрьективную $f: A \rightarrow B$. Рассмотрим семейство $R_b = \{ a \in A\ |\ f(a) = b \}$.
 Построим полный порядок на каждом из $R_b$. Тогда $f^{-1}(b) = \min R_b$.
 \end{proof}
-\begin{thm}Существует частичная обратная у сюръективных функций $\Rightarrow$ существует трансверсаль у дизъюнктных множеств.\end{thm}
+\begin{thm}Существует частичная обратная у сюръективных функций $\Rightarrow$ существует трансверсаль у семейства непустых дизъюнктных множеств.\end{thm}
 \begin{proof}
-Пусть дано семейство дизъюнктных множеств $\{ A_i \}$. 
-Рассмотрим $f: \cup A_i \rightarrow \{A_i\}$, что
-$f(a) = \cup\{ A_i \in \{ A_i \}\ |\ a \in A_i \}$. Поскольку $A_i$ дизъюнктны,
-$f(a) = A_i$ при всех $a$. Тогда существует $f^{-1}(A_i) \in A_i$. Тогда $\{ f^{-1}(A_i) \} \in \times \{A_i\}$.
+Пусть дано семейство непустых дизъюнктных множеств $\mathcal{A}$. 
+Рассмотрим $f: \cup \mathcal{A} \rightarrow \mathcal{A}$, что
+$f(a) = \cup\{ A \in \mathcal{A}\ |\ a \in A \}$. Поскольку элементы $\mathcal{A}$ дизъюнктны,
+$f(a) \in \mathcal{A}$ при всех $a$. Тогда существует $f^{-1}: \mathcal{A} \rightarrow \cup\mathcal{A}$. Тогда 
+$\{ f^{-1}(A)\ |\ A\in\mathcal{A} \} \in \times \mathcal{A}$.
 \end{proof}
 \end{frame}
-
 
 \begin{frame}{Зачем нужна аксиома выбора?}
 \begin{dfn}Пределом функции $f$ в точке $x_0$ по \emph{Коши} называется такой $y$, что
@@ -276,7 +276,7 @@ $p_n \rightarrow x_0$, так как $|x_\frac{1}{n} - x_0| < \frac{1}{n}$,
 \begin{thm}Если рассмотреть ИИП с ZFC, то для любого $P$ выполнено $\vdash P \vee \neg P$.\end{thm}
 \begin{proof}Рассмотрим $\mathcal{B} = \{0,1\}$, $A_0 = \{ x \in \mathcal{B} | x = 0 \vee P \}$ и 
 $A_1 = \{ x \in \mathcal{B} | x = 1 \vee P\}$.
-$\{A_0,A_1\}$ --- непустое семейство непустых множеств, и по акс. выбора существует
+$\{A_0,A_1\}$ --- семейство непустых множеств, и по акс. выбора существует
 $f: \{A_0,A_1\} \rightarrow \cup A_i$, что $f(A_i) \in A_i$. (Если $P$, то $A_0 = A_1$ и $\{A_0,A_1\} = \{\mathcal{B}\}$).
 
 \vspace{0.3cm}
