@@ -105,16 +105,24 @@ $\text{Tr}_\mathcal{S} = \{ \ulcorner\alpha\urcorner\ |\ \llbracket\alpha\rrbrac
 \end{dfn}
 
 \begin{lmm}Пусть $D(\ulcorner\alpha\urcorner) = \ulcorner\alpha(\overline{\ulcorner\alpha\urcorner})\urcorner$ для
-любой формулы $\alpha(x)$. Тогда $D$ представима в формальной арифметике.
+любой $\alpha(x)$. Тогда $D$ представима в Ф.А.
 \end{lmm}
 
 
 \begin{thm}Если расширение Ф.А. $\mathcal{S}$ непротиворечиво и $D$ представима в нём, то $\text{Th}_\mathcal{S}$ невыразимо в $\mathcal{S}$\end{thm}
 
-\begin{proof}Пусть $\delta(a,p)$ представляет $D$, и пусть $\sigma(x)$ выражает множество $\text{Th}_\mathcal{S}$ (рассматриваемое как
-одноместное отношение).
+\begin{proof}Пусть $\delta(a,p)$ представляет $D$, и пусть $\sigma(x)$ выражает множество $\text{Th}_\mathcal{S}$.% (рассматриваемое как
+%одноместное отношение).
 
-Пусть $\alpha(x) := \forall p.\delta(x,p)\rightarrow\neg\sigma(p)$. Верно ли, что $\ulcorner\alpha\urcorner\in\text{Th}$?
+Пусть $\alpha(x) := \forall p.\delta(x,p)\rightarrow\neg\sigma(p)$. Верно ли, что $\ulcorner\alpha(\overline{\ulcorner\alpha\urcorner})\urcorner\in\text{Th}_\mathcal{S}$?
+\begin{itemize}
+\item Если $\vdash_\mathcal{S}\alpha(\overline{\ulcorner\alpha\urcorner})$, то $\vdash_\mathcal{S}\forall p.\delta(\overline{\ulcorner\alpha\urcorner},p)\rightarrow\neg\sigma(p)$,
+то есть $\vdash_\mathcal{S}\neg\sigma(\overline{\ulcorner\alpha(\overline{\ulcorner\alpha\urcorner})\urcorner})$
+
+\item Если $\not\vdash_\mathcal{S}\alpha(\overline{\ulcorner\alpha\urcorner})$, то %при всех $p$ выполнено $\llbracket\sigma(p)\rrbracket=\text{Л}$, то есть
+по выразимости $\vdash_\mathcal{S}\neg\sigma(\overline{\ulcorner\alpha(\overline{\ulcorner\alpha\urcorner})\urcorner})$,
+отчего $\vdash_\mathcal{S}\alpha(\overline{\ulcorner\alpha\urcorner})$
+\end{itemize}
 \end{proof}
 \end{frame}
 

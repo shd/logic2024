@@ -437,16 +437,19 @@ $$
 \end{frame}
 
 \begin{frame}{Непротиворечивость формальной арифметики}
-\begin{thm}Система $S_\infty$ непротиворечива\end{thm}
+\begin{lmm}Если $\vdash_\infty\alpha$ и $\vdash_\infty\neg\alpha$, тогда $\vdash_\infty\neg 0=0$.
+\end{lmm}
+
+\begin{thm}$\not\vdash_\infty\neg 0=0$\end{thm}
 \begin{proof} \pause
-Рассмотрим формулу $\neg 0=0$. 
-Если эта формула выводима в $S_\infty$, то она выводима и в $S_\infty$ без сечений.
-Тогда какое заключительное правило? \pause
+Пусть $\vdash_\infty\neg 0=0$, устраним сечения и рассмотрим заключительное правило.
+\pause
 \begin{enumerate}
 \item Правило де Моргана? \pause Нет отрицаний дизъюнкции ($\neg(\alpha\vee\beta)\vee\delta$). \pause
 \item Отрицание? \pause Нет двойного отрицания ($\neg\neg\alpha\vee\delta$). \pause
 \item Бесконечная индукция или квантификация? \pause Нет квантора. \pause
-\item Ослабление? \pause Нет дизъюнкции ($\alpha \vee \beta$), в правиле ослабления $\beta$ обязана присутствовать. \pause
+\item Ослабление? \pause Нет дизъюнкции ($\alpha \vee \beta$), хотя $\beta$ обязана присутствовать. \pause
+\item Сечение? \pause Исключено по условию.
 \end{enumerate}
 
 То есть, неизбежно, $\neg 0=0$ --- аксиома, что также неверно.
