@@ -230,24 +230,31 @@ $\Gamma(\mathcal{A}) = \langle A\cup\{\omega\}, (\preceq_{\Gamma(\mathcal{A})}) 
 \end{frame}
 
 \begin{frame}{Оценка $\Gamma(\mathcal{L})$}
-\begin{thmrus}Рассмотрим $\llbracket \alpha \rrbracket_{\Gamma(\mathcal{L})} = \llbracket \alpha \rrbracket_\mathcal{L}$.
+\begin{defrus}
+Определим $\llbracket\cdot\rrbracket_{\Gamma(\mathcal{L})} : \mathcal{F} \rightarrow \Gamma(\mathcal{L})$.
+Положим $\llbracket X \rrbracket_{\Gamma(\mathcal{L})} := \llbracket X \rrbracket_\mathcal{L}$.
+Связки определим естественным образом:
+$\llbracket \alpha\with\beta \rrbracket_{\Gamma(\mathcal{L})} := \llbracket \alpha\rrbracket_{\Gamma(\mathcal{L})}\cdot\llbracket\beta \rrbracket_{\Gamma(\mathcal{L})}$
+и т.п.
+\end{defrus}
+\begin{thmrus}
 Оценка является алгеброй Гейтинга, согласованной с ИИВ.
 \end{thmrus}
 \begin{proof}
-Поскольку $\llbracket\cdot\rrbracket_{\Gamma(\mathcal{L})} : \mathcal{F} \rightarrow \Gamma(\mathcal{L})$, оценкой является алгебра Гейтинга.
-Но надо показать согласованность с ИИВ.
+$\Gamma(\mathcal{L})$ --- алгебра Гейтинга.
+Также заметим, что:
+\begin{itemize}
+\item $\llbracket \alpha\rightarrow\alpha \rrbracket_{\Gamma(\mathcal{L})} = \llbracket \alpha\rrbracket_{\Gamma(\mathcal{L})}\rightarrow\llbracket\alpha \rrbracket_{\Gamma(\mathcal{L})}
+= 1_{\Gamma(\mathcal{L})}$
+\item $\llbracket \alpha\with\neg\alpha \rrbracket_{\Gamma(\mathcal{L})} = \llbracket \alpha\rrbracket_{\Gamma(\mathcal{L})} \cdot (\llbracket \alpha\rrbracket_{\Gamma(\mathcal{L})}\rightarrow 0)
+= 0_{\Gamma(\mathcal{L})}$.
+\end{itemize}
 
-Индукция по структуре формулы и перебор операций: для каждой операции $\star$ надо показать, что 
-  $\llbracket \alpha \star \beta \rrbracket_{\Gamma(\mathcal{L})} =
-   \llbracket \alpha \rrbracket_{\Gamma(\mathcal{L})}\star\llbracket \beta \rrbracket_{\Gamma(\mathcal{L})}$, для этого достаточно
-показать
-  $\llbracket \alpha \rrbracket_{\Gamma(\mathcal{L})}\star\llbracket \beta \rrbracket_{\Gamma(\mathcal{L})} = 
-   \llbracket \alpha \rrbracket_\mathcal{L}\star_\mathcal{L} \llbracket \beta \rrbracket_{\mathcal{L}}$.
-
-Это так почти везде, но надо показать, что $\omega$ не мешает операциям.
+Согласованность оценки следует из определения и указанных выше соображений.
 \end{proof}
 \end{frame}
 
+\begin{comment}
 \begin{frame}{$\Gamma(\mathcal{L})$ --- алгебра Гейтинга, согласованная с ИИВ.}
 
 Рассмотрим $(\with)$. Неформально: почти везде 
@@ -301,6 +308,7 @@ $\Gamma(\mathcal{A}) = \langle A\cup\{\omega\}, (\preceq_{\Gamma(\mathcal{A})}) 
 %$\sigma\vdash\alpha\rightarrow\beta$ (карринг + теорема о дедукции)
 %\end{itemize}
 \end{frame}
+\end{comment}
 
 \begin{frame}{Гомоморфизм алгебр}
 \begin{defrus}Пусть $\mathcal{A}, \mathcal{B}$ --- алгебры Гейтинга. Тогда $g: \mathcal{A} \rightarrow \mathcal{B}$ --- гомоморфизм,
