@@ -166,7 +166,7 @@ https://www.mccme.ru/free-books/shen/shen-logic-part2-2.pdf
 + Просто-типизированное лямбда-исчисление, изоморфизм Карри-Ховарда
 + Обзор различных теорий, основанных на лямбда-исчислении и их приложений в математике и программировании.
 ### Где почитать
-+ Morten Heine B. Sørensen, Pawel Urzyczyn: Lections on the Curry-Howard Isomorphism
++ Morten Heine B. Sørensen, Pawel Urzyczyn: Lectures on the Curry-Howard Isomorphism
 https://disi.unitn.it/~bernardi/RSISE11/Papers/curry-howard.pdf
 
 ## Лекция 13
